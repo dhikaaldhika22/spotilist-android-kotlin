@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Spotilist">
         <activity
+            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
