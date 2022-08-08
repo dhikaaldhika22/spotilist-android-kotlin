@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Spotilist</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">Hello</string>
+    <string name="gita">Gita,</string>
+    <string name="question">What you want to search today?</string>
+    <string name="image">image</string>
+    <string name="article">Article</string>
+    <string name="see_all">See All</string>
 </resources>
