@@ -11,4 +11,11 @@
     <string name="image">image</string>
     <string name="article">Article</string>
     <string name="see_all">See All</string>
+    <!-- Sign In String -->
+    <string name="email">Email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email_hint">dhikagita22@gmail.com</string>
+    <string name="password_hint">************</string>
+    <string name="password">Password</string>
+    <string name="atau">ATAU</string>
 </resources>
