@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "307370558885",
+    "project_id": "spotilist-c3825",
+    "storage_bucket": "spotilist-c3825.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307370558885:android:775aae6776b934cade144c",
+        "android_client_info": {
+          "package_name": "com.myproject.app.spotilist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307370558885-5ju8a50u10gtgp8uasuu39hm5m0m1bcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzpbwaqMsJI1g0L7q83pdXdp0fLBp_SL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307370558885-5ju8a50u10gtgp8uasuu39hm5m0m1bcn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

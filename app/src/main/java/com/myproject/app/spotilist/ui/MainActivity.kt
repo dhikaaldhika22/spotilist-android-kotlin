@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.nav_host_fragment, HomeFragment())
             .commit()
 
+        supportActionBar?.hide()
         navBottom()
     }
 
