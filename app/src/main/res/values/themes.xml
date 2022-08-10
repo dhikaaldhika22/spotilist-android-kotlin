@@ -18,6 +18,8 @@
         <item name="fontFamily">@font/lato</item>
         <item name="android:textSize">16.5sp</item>
         <item name="android:tint">@color/hint</item>
-        <item name="colorAccent">@color/hint</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorHint">@color/hint</item>
+        <item name="android:editTextColor">@color/white</item>
     </style>
 </resources>

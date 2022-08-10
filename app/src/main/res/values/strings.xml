@@ -30,4 +30,5 @@
     <string name="sign_in_left">Already Have an Account?</string>
     <string name="sign_in_mid">Sign In</string>
     <string name="sign_in_right">Now!</string>
+    <string name="your_favorite">Your Favorite</string>
 </resources>
