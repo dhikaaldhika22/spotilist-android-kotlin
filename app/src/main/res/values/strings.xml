@@ -19,4 +19,15 @@
     <string name="password">Password</string>
     <string name="atau">ATAU</string>
     <string name="or">Or</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="register_left">Doesn\'t have an account yet?</string>
+    <string name="register_mid">Register</string>
+    <string name="register_right">Now!</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="password_confirmation">Password Confirmation</string>
+    <string name="sign_in_left">Already Have an Account?</string>
+    <string name="sign_in_mid">Sign In</string>
+    <string name="sign_in_right">Now!</string>
 </resources>
