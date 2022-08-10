@@ -19,5 +19,6 @@
         <item name="android:textSize">16.5sp</item>
         <item name="android:tint">@color/hint</item>
         <item name="colorAccent">@color/hint</item>
+        <item name="android:textColorHint">@color/hint</item>
     </style>
 </resources>
