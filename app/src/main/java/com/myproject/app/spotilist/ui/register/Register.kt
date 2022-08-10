@@ -1,4 +1,4 @@
-package com.myproject.app.spotilist.ui
+package com.myproject.app.spotilist.ui.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

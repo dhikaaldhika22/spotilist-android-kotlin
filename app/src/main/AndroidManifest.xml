@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Spotilist">
         <activity
-            android:name=".ui.Register"
+            android:name=".ui.register.Register"
             android:exported="false" />
         <activity
             android:name=".ui.articledetail.ArticleDetailActivity"

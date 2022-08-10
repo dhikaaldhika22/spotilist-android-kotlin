@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.databinding.ActivityLoginBinding
-import com.myproject.app.spotilist.ui.Register
+import com.myproject.app.spotilist.ui.register.Register
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityLoginBinding
