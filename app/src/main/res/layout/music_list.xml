@@ -10,7 +10,7 @@
     android:layout_marginEnd="24dp"
     android:backgroundTint="@color/secondary"
     android:shadowRadius="50"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,32 +41,50 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:maxLines="2"
                 android:textColor="@color/white"
-                android:textSize="14.5sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:transitionName="title"
-                tools:text="10 Cara Merakit Komputer Sendiri di Rumah, Sudah Coba? " />
+                tools:text="Terlukis Indah" />
 
             <TextView
-                android:id="@+id/tv_content"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_singers"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/gray"
-                android:maxLines="2"
                 android:textSize="11sp"
                 android:textStyle="normal"
-                android:transitionName="content"
-                tools:text="Dengan mengetahui cara merakit komputer sendiri, maka Sahabat bisa jauh lebih puas untuk mendapatkan PC sesuai harapan.." />
+                android:transitionName="singers"
+                tools:text="Rizky Febian and Ziva Mongolia" />
+
+            <TextView
+                android:id="@+id/tv_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:transitionName="album"
+                tools:text="Album: Terlukis Indah" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end|bottom"
+            tools:text="03.54" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

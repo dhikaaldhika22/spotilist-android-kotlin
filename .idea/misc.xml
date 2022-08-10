@@ -3,18 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/bg_button.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/bg_image.xml" value="0.1" />
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/bg_search_view.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_baseline_favorite_border.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout-v31/article_list.xml" value="0.27447916666666666" />
-        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/article_list.xml" value="0.2" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/fragment_favorite.xml" value="0.1265625" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/fragment_search.xml" value="0.1125" />
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/fragment_search.xml" value="0.176" />
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/music_list.xml" value="0.27447916666666666" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/menu/nav_bottom.xml" value="0.27447916666666666" />
       </map>
     </option>

@@ -15,4 +15,7 @@
     <color name="nav_view_color">#111436</color>
     <color name="gray">#878787</color>
     <color name="body">#6D718C</color>
+    <color name="hint">#878787</color>
+    <color name="start_color">#2649C5</color>
+    <color name="end_color">#C526A2</color>
 </resources>
