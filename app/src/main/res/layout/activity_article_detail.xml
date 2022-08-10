@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.articledetail.ArticleDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/image" />
+
+    <TextView
+        android:id="@+id/tv_article_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image"
+        tools:text="Jenis Musik Ini yang Membuat Orang Tidak Mudah Stress" />
+
+    <TextView
+        android:id="@+id/tv_article_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:justificationMode="inter_word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_article_title"
+        tools:targetApi="o"
+        tools:text="Penelitian yang dilakukan di Rensselaer Polytechnic Institute menemukan bahwa orang yang mendengar musik alam seperti suara dedaunan hutan, air mengalir, burung berkicau dan suara natural lainnya mampu meningkatkan konsentrasi dan membantu orang merasa tenang saat bekerja.
+
+Orang akan merasa rileks atau santai ketika mendengarkan musik alam ketika bekerja sehingga detak jantungnya lebih lambat dan penapasannya lebih teratur karena kadar stresnya tidak tinggi. Dalam hal ini mendengarkan musik sangat membantu menjaga agar orang tidak mudah panik dan mudah kehilangan fokus ketika dihadapkan pada tekanan.
+
+Jadi, jika ingin bekerja dengan lebih tenang dan tidak mudah stres, dengarkan musik alam yang menenangkan ya."/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

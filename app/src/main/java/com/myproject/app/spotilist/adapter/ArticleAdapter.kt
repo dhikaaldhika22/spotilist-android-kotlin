@@ -10,6 +10,10 @@ import com.myproject.app.spotilist.databinding.ArticleListBinding
 class ArticleAdapter(private val listArticle: List<ArticleModel>) : RecyclerView.Adapter<ArticleAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class ListViewHolder(var binding: ArticleListBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -32,8 +36,9 @@ class ArticleAdapter(private val listArticle: List<ArticleModel>) : RecyclerView
     }
 
     override fun getItemCount(): Int = listArticle.size
+
+    interface OnItemClickCallback {
+        fun onItemClicked(article: ArticleModel)
+    }
 }
 
-interface OnItemClickCallback {
-    fun onItemClicked(article: ArticleModel)
-}

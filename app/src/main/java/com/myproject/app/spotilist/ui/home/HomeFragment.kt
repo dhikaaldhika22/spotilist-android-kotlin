@@ -1,5 +1,6 @@
 package com.myproject.app.spotilist.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import com.google.firebase.database.*
 import com.myproject.app.spotilist.adapter.ArticleAdapter
 import com.myproject.app.spotilist.data.model.ArticleModel
 import com.myproject.app.spotilist.databinding.FragmentHomeBinding
+import com.myproject.app.spotilist.ui.articledetail.ArticleDetailActivity
+import com.myproject.app.spotilist.ui.articledetail.ArticleDetailActivity.Companion.EXTRA_DATA
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -55,8 +58,12 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun parseArticleDetail() {
-
+    private fun toDetailArticle(article: ArticleModel) {
+        Intent(requireContext(), ArticleDetailActivity::class.java).apply {
+            putExtra(EXTRA_DATA, article.title)
+        }.also {
+            startActivity(it)
+        }
     }
 
     override fun onDestroy() {
