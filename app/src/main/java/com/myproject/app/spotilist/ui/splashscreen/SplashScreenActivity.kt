@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.databinding.ActivitySplashScreenBinding
 import com.myproject.app.spotilist.ui.MainActivity
+import com.myproject.app.spotilist.ui.login.LoginActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class SplashScreenActivity : AppCompatActivity() {
         binding.apply {
             ivLogo.alpha = 0f
             ivLogo.animate().setDuration(2000).alpha(1f).withEndAction {
-                val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+                val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
