@@ -75,9 +75,4 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         _binding = null
     }
-
-    companion object {
-        private const val TAG = "EmailPassword"
-    }
-
 }

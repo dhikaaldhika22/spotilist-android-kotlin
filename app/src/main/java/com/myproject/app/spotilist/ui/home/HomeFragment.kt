@@ -39,7 +39,22 @@ class HomeFragment : Fragment() {
         }
 
         val user = auth.currentUser
-        binding?.tvUser?.text = user?.displayName
+        database = FirebaseDatabase.getInstance("https://spotilist-c3825-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("users")
+        database.addListenerForSingleValueEvent(object :  ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (data in snapshot.children) {
+                    if (data.key == user?.uid) {
+//                        val userData= data.getValue(UserModel::class.java)
+                        binding?.tvUser?.text = data.getValue(String::class.java)
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
 
         return binding?.root
     }
