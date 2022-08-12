@@ -29,22 +29,20 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
         auth = Firebase.auth
+        getUsername()
         getData()
+        logOut()
 
-        binding?.btnLogout?.setOnClickListener {
-            auth.signOut()
-            Toast.makeText(requireContext(), "User Sign Out Successfully", Toast.LENGTH_SHORT).show()
-            val intent = Intent(requireContext(), LoginActivity::class.java)
-            startActivity(intent)
-        }
+        return binding?.root
+    }
 
+    private fun getUsername() {
         val user = auth.currentUser
         database = FirebaseDatabase.getInstance("https://spotilist-c3825-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("users")
         database.addListenerForSingleValueEvent(object :  ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (data in snapshot.children) {
                     if (data.key == user?.uid) {
-//                        val userData= data.getValue(UserModel::class.java)
                         binding?.tvUser?.text = data.getValue(String::class.java)
                     }
                 }
@@ -53,10 +51,7 @@ class HomeFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {
 
             }
-
         })
-
-        return binding?.root
     }
 
     private fun getData() {
@@ -86,10 +81,19 @@ class HomeFragment : Fragment() {
         })
     }
 
-    override fun onDestroy() {
-        _binding = null
+    private fun logOut() {
+        binding?.btnLogout?.setOnClickListener {
+            auth.signOut()
+            Toast.makeText(requireContext(), "User Sign Out Successfully", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
+    override fun onDestroy() {
         super.onDestroy()
+
+        _binding = null
     }
 
 }

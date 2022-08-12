@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class MusicModel(
-    val album: String,
-    val duration: Double,
-    val imageUrl: String,
-    val singers: String,
-    val title: String
+    val album: String = "",
+    val duration: Double = 0.0,
+    val imageUrl: String = "",
+    val singers: String = "",
+    val title: String = ""
 ) : Parcelable

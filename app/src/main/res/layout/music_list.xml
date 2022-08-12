@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
     android:layout_marginTop="12dp"
     android:layout_marginBottom="8dp"
-    android:layout_marginEnd="24dp"
     android:backgroundTint="@color/secondary"
     android:shadowRadius="50"
     app:cardCornerRadius="5dp">
@@ -33,10 +31,11 @@
             tools:targetApi="s" />
 
         <LinearLayout
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/iv_thumbnail"
+            android:id="@+id/lin_aaa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/iv_thumbnail"
             android:orientation="vertical">
 
             <TextView
@@ -44,8 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="0dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="0dp"
                 android:fontFamily="@font/poppins_medium"
                 android:maxLines="2"
                 android:textColor="@color/white"
@@ -58,8 +57,8 @@
                 android:id="@+id/tv_singers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/gray"
@@ -74,8 +73,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="11sp"
                 android:textColor="@color/white"
+                android:textSize="11sp"
                 android:transitionName="album"
                 tools:text="Album: Terlukis Indah" />
         </LinearLayout>
@@ -84,7 +83,13 @@
             android:id="@+id/tv_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="end|bottom"
-            tools:text="03.54" />
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/lin_aaa"
+            android:textColor="@color/primary"
+            android:textSize="11sp"
+            tools:text="03.54"
+            tools:ignore="RelativeOverlap" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

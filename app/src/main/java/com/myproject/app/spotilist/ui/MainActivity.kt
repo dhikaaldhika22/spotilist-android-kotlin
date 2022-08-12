@@ -8,20 +8,22 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.databinding.ActivityMainBinding
+
 import com.myproject.app.spotilist.ui.favorite.FavoriteFragment
 import com.myproject.app.spotilist.ui.home.HomeFragment
 import com.myproject.app.spotilist.ui.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
-        binding.navView.setItemSelected(R.id.nav_home, true)
+        binding?.navView?.setItemSelected(R.id.nav_home, true)
         auth = Firebase.auth
 
         supportFragmentManager
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navBottom() {
-        binding.navView.setOnItemSelectedListener {
+        binding?.navView?.setOnItemSelectedListener {
             var fragment: Fragment? = null
             fragment = when (it) {
                 R.id.nav_search -> SearchFragment()
@@ -47,5 +49,11 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.nav_host_fragment, fragment)
                 .commit()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        _binding = null
     }
 }
