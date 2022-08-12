@@ -52,6 +52,8 @@ class HomeFragment : Fragment() {
 
             }
         })
+
+        binding?.tvUser?.text = user?.displayName
     }
 
     private fun getData() {

@@ -1,12 +1,20 @@
+@file:Suppress("DEPRECATION")
+
 package com.myproject.app.spotilist.ui.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.myproject.app.spotilist.R
@@ -14,11 +22,13 @@ import com.myproject.app.spotilist.databinding.ActivityLoginBinding
 import com.myproject.app.spotilist.ui.MainActivity
 import com.myproject.app.spotilist.ui.register.Register
 
+
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var _binding: ActivityLoginBinding? = null
     private val binding get() =_binding
 
     private lateinit var auth: FirebaseAuth
+    private var mGoogleSignInClient: GoogleSignInClient? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +37,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         supportActionBar?.hide()
         auth = Firebase.auth
+        createRequest()
 
         binding?.tvRegisterMid?.setOnClickListener(this)
         binding?.btnSignIn?.setOnClickListener {
             loginUser()
+        }
+
+        binding?.btnGoogle?.setOnClickListener {
+            signInGoogle()
         }
     }
 
@@ -70,9 +85,61 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun createRequest() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+    }
+
+    private fun signInGoogle() {
+        val signInIntent = mGoogleSignInClient?.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+            if (task.isSuccessful) {
+                try {
+                    val account: GoogleSignInAccount = task.getResult(ApiException::class.java)
+                    firebaseAuthWithGoogle(account)
+                } catch (e: ApiException) {
+
+                    Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        auth.currentUser!!
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this@LoginActivity, "Sorry auth failed.", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
 
         _binding = null
+    }
+
+    companion object {
+        private const val RC_SIGN_IN = 123
     }
 }
