@@ -32,4 +32,8 @@
     <string name="sign_in_right">Now!</string>
     <string name="your_favorite">Your Favorite</string>
     <string name="log_out">Log Out</string>
+
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
 </resources>

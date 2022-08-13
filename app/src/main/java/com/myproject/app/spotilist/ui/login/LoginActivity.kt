@@ -7,11 +7,13 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.AccessToken
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
@@ -20,7 +22,6 @@ import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.databinding.ActivityLoginBinding
 import com.myproject.app.spotilist.ui.MainActivity
 import com.myproject.app.spotilist.ui.register.Register
-
 
 class LoginActivity : AppCompatActivity() {
     private var _binding: ActivityLoginBinding? = null
@@ -98,6 +99,7 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -107,8 +109,13 @@ class LoginActivity : AppCompatActivity() {
 
             if (task.isSuccessful) {
                 try {
+
+                    // Google Sign In
                     val account: GoogleSignInAccount = task.getResult(ApiException::class.java)
                     firebaseAuthWithGoogle(account)
+
+                    // Facebook Sign In
+
                 } catch (e: ApiException) {
 
                     Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
@@ -131,6 +138,24 @@ class LoginActivity : AppCompatActivity() {
                             .show()
                     }
                 }
+    }
+
+    private fun handleFacebookAccessToken(token: AccessToken) {
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    auth.currentUser
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     override fun onDestroy() {
