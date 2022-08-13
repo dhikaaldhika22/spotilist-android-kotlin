@@ -25,7 +25,7 @@ import com.myproject.app.spotilist.ui.register.Register
 
 class LoginActivity : AppCompatActivity() {
     private var _binding: ActivityLoginBinding? = null
-    private val binding get() =_binding
+    private val binding get() = _binding
 
     private lateinit var auth: FirebaseAuth
     private var mGoogleSignInClient: GoogleSignInClient? = null
