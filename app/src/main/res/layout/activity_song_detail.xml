@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.songdetail.SongDetail"
+    android:background="@color/background">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="208dp"
+            android:layout_height="208dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:src="@tools:sample/avatars"/>
+
+        <TextView
+            android:id="@+id/tv_song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text ="Song Title"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_singers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_song_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Singer's name"
+            android:textSize="12sp"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/poppins"/>
+
+        <Button
+            android:id="@+id/btn_play_song"
+            android:layout_width="151dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_singers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bg_button"
+            android:drawableStart="@drawable/ic_baseline_play_arrow_24"
+            tools:text = "Play Song"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <TextView
+            android:id="@+id/tv_lyrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_play_song"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text ="Lyrics"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_bold"/>
+
+        <TextView
+            android:id="@+id/tv_songs_lyrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33.5dp"
+            android:layout_marginEnd="33.5dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_lyrics"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            tools:text ="
+Semenjak pertama ku jumpa dengannya\n
+Ada rasa yang berbeda\n
+Kutatap wajahmu tanpa ragu-ragu\n
+Kumulai tersipu\n
+Oh inilah cinta pertama bagi diri ini oh\n
+Takkan ada yang bisa mengganti\n
+Semua rasa ini padamu\n
+Kumulai merasakan rasa cinta\n
+Cinta yang tumbuh di setiap saat\n
+Kulukis sebuah kisah yang nyata\n
+Agar semua tak berakhir\n
+Kini kita bersama dan mulai semuanya\n
+Dan yakinkan hati kita berdua\n
+Oh inilah cinta pertama bagi diri ini oh\n
+Takkan ada yang bisa mengganti\n
+Semua rasa ini padamu\n
+Kumulai merasakan rasa cinta\n
+Cinta yang tumbuh di setiap saat\n
+Kulukis sebuah kisah yang nyata\n
+Agar semua tak berakhir\n
+Kumulai merasakan rasa cinta\n
+Cinta yang tumbuh di setiap saat\n
+Kulukis semua kisah yang nyata\n
+Agar semua tak berakhir\n
+Ku yakin kau tahu\n
+Bahwa kau segalanya\n
+Ku pun merasa\n
+Berjanjilah (berjanjilah diriku)\n
+Tuk selamanya (selamanya)\n
+Kumulai merasakan rasa cinta\n
+Cinta yang tumbuh di setiap saat\n
+Kulukis sebuah kisah yang nyata\n
+Agar semua tak berakhir\n
+Semua kisah terlukis indah\n
+Kau dan aku akan selalu menyatu\n
+Dan yakinkan hati kita berdua\n
+Semua kisah terlukis indah\n
+Kau dan aku akan selalu menyatu\n
+Dan yakinkan hati kita berdua\n
+"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</ScrollView>
