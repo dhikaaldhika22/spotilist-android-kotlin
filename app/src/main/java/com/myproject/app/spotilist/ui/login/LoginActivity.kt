@@ -5,7 +5,6 @@ package com.myproject.app.spotilist.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -23,7 +22,7 @@ import com.myproject.app.spotilist.ui.MainActivity
 import com.myproject.app.spotilist.ui.register.Register
 
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : AppCompatActivity() {
     private var _binding: ActivityLoginBinding? = null
     private val binding get() =_binding
 
@@ -39,19 +38,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         auth = Firebase.auth
         createRequest()
 
-        binding?.tvRegisterMid?.setOnClickListener(this)
+        binding?.tvRegisterMid?.setOnClickListener {
+            val intent = Intent(this, Register::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding?.btnSignIn?.setOnClickListener {
             loginUser()
         }
 
         binding?.btnGoogle?.setOnClickListener {
             signInGoogle()
-        }
-    }
-
-    override fun onClick(v: View) {
-        when(v.id) {
-            R.id.tv_register_mid -> startActivity(Intent(this, Register::class.java))
         }
     }
 
@@ -76,6 +74,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
                             startActivity(intent)
+                            finish()
                         } else {
                             Toast.makeText(this@LoginActivity, "Login Failed caused by: " + task.exception?.message, Toast.LENGTH_SHORT).show()
                         }
@@ -126,6 +125,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         auth.currentUser!!
                         val intent = Intent(applicationContext, MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     } else {
                         Toast.makeText(this@LoginActivity, "Sorry auth failed.", Toast.LENGTH_SHORT)
                             .show()

@@ -4,19 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
-import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.data.model.UserModel
 import com.myproject.app.spotilist.databinding.ActivityRegisterBinding
 import com.myproject.app.spotilist.ui.login.LoginActivity
 
-class Register : AppCompatActivity(), View.OnClickListener {
+class Register : AppCompatActivity() {
 
     private var _binding: ActivityRegisterBinding? = null
     private val binding get() = _binding
@@ -32,17 +30,17 @@ class Register : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.hide()
         auth = Firebase.auth
 
-        binding?.tvSignInMid?.setOnClickListener(this)
+        binding?.tvSignInMid?.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding?.btnSignUp?.setOnClickListener {
             createAccount()
         }
     }
 
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.tv_sign_in_mid -> startActivity(Intent(this, LoginActivity::class.java))
-        }
-    }
 
     private fun createAccount() {
         binding?.apply {
@@ -80,7 +78,7 @@ class Register : AppCompatActivity(), View.OnClickListener {
 
                                 val intent = Intent(this@Register, LoginActivity::class.java)
                                 startActivity(intent)
-
+                                finish()
                             } else {
                                 Toast.makeText(this@Register, "Registration Failed Caused by: " + task.exception?.message,
                                     Toast.LENGTH_SHORT).show()

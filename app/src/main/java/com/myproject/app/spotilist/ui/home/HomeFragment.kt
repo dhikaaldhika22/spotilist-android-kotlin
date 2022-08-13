@@ -87,8 +87,10 @@ class HomeFragment : Fragment() {
         binding?.btnLogout?.setOnClickListener {
             auth.signOut()
             Toast.makeText(requireContext(), "User Sign Out Successfully", Toast.LENGTH_SHORT).show()
+
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
+            activity?.finish()
         }
     }
 
