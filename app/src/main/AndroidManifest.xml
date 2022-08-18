@@ -13,12 +13,8 @@
         android:theme="@style/Theme.Spotilist">
         <activity
             android:name=".ui.playedsong.PlayedSong"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -38,7 +34,12 @@
             android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
