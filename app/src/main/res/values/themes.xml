@@ -22,4 +22,10 @@
         <item name="android:textColorHint">@color/hint</item>
         <item name="android:editTextColor">@color/white</item>
     </style>
+
+    <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint">@color/secondary</item>
+        <item name="android:progressTint">@color/primary</item>
+        <item name="android:thumbTint">@color/primary</item>
+    </style>
 </resources>
