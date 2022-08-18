@@ -16,7 +16,10 @@
 
         <activity
             android:name=".ui.playedsong.PlayedSong"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
+
         <activity
             android:name=".ui.songdetail.SongDetail"
             android:exported="false" />
