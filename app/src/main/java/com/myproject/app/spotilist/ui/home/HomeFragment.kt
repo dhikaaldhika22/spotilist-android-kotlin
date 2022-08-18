@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
 
                     binding?.rvArticleList?.apply {
                         layoutManager = LinearLayoutManager(requireContext())
-                        adapter = ArticleAdapter(articleArrayList)
+                        adapter = ArticleAdapter(context, articleArrayList)
                         setHasFixedSize(true)
                     }
                 }

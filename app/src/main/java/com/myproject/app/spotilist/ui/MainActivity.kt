@@ -8,7 +8,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.databinding.ActivityMainBinding
-
 import com.myproject.app.spotilist.ui.favorite.FavoriteFragment
 import com.myproject.app.spotilist.ui.home.HomeFragment
 import com.myproject.app.spotilist.ui.search.SearchFragment

@@ -1,13 +1,16 @@
 package com.myproject.app.spotilist.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.myproject.app.spotilist.data.model.MusicModel
 import com.myproject.app.spotilist.databinding.MusicListBinding
+import com.myproject.app.spotilist.ui.songdetail.SongDetail
 
-class MusicAdapter(private val listMusic: List<MusicModel>) : RecyclerView.Adapter<MusicAdapter.ListViewHolder>() {
+class MusicAdapter(var c: Context, private val listMusic: List<MusicModel>) : RecyclerView.Adapter<MusicAdapter.ListViewHolder>() {
     class ListViewHolder (var binding: MusicListBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -18,6 +21,7 @@ class MusicAdapter(private val listMusic: List<MusicModel>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val music = listMusic[position]
+        val detailMusic = listMusic[position]
 
         holder.binding.apply {
             Glide.with(ivThumbnail.context)
@@ -30,9 +34,21 @@ class MusicAdapter(private val listMusic: List<MusicModel>) : RecyclerView.Adapt
             tvAlbum.text = music.album
             tvDuration.text = music.duration.toString()
         }
+
+        holder.itemView.setOnClickListener {
+            val img = detailMusic.imageUrl
+            val title = detailMusic.title
+            val singer = detailMusic.singers
+            val lyrics = detailMusic.lyrics
+            val intent = Intent(c, SongDetail::class.java)
+
+            intent.putExtra("img", img)
+            intent.putExtra("title", title)
+            intent.putExtra("singer", singer)
+            intent.putExtra("lyrics", lyrics)
+            c.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = listMusic.size
-
-
 }

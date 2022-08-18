@@ -9,5 +9,6 @@ data class MusicModel(
     val duration: Double = 0.0,
     val imageUrl: String = "",
     val singers: String = "",
-    val title: String = ""
+    val title: String = "",
+    val lyrics: String = ""
 ) : Parcelable

@@ -44,7 +44,7 @@ class SearchFragment : Fragment() {
 
                     binding?.rvSongsList?.apply {
                         layoutManager = LinearLayoutManager(requireContext())
-                        adapter = MusicAdapter(musicArrayList)
+                        adapter = MusicAdapter(context, musicArrayList)
                         setHasFixedSize(true)
                     }
                 }
