@@ -39,7 +39,11 @@ class MusicAdapter(var c: Context, private val listMusic: List<MusicModel>) : Re
             val img = detailMusic.imageUrl
             val title = detailMusic.title
             val singer = detailMusic.singers
-            val lyrics = detailMusic.lyrics
+            var lyrics = detailMusic.lyrics
+            if (lyrics.contains("_n")) {
+                val newLyric: String = lyrics.replace("_n", "\n")
+                lyrics = newLyric
+            }
             val intent = Intent(c, SongDetail::class.java)
 
             intent.putExtra("img", img)
