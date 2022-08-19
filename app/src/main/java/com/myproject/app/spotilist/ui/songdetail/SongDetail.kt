@@ -15,7 +15,10 @@ class SongDetail : AppCompatActivity() {
 
         setToolbar("Detail")
         getDetailData()
+
+
     }
+
 
     private fun getDetailData() {
         val songIntent = intent
@@ -28,7 +31,7 @@ class SongDetail : AppCompatActivity() {
             ivImage.setImageGlide(applicationContext, songImg!!)
             tvSongTitle.text = songTitle
             tvSingers.text = songSinger
-            tvSongsLyrics.text = songLyric
+            tvSongsLyrics.text = songLyric?.replace("_n", "\n")
         }
     }
 
@@ -47,3 +50,4 @@ class SongDetail : AppCompatActivity() {
         return super.onSupportNavigateUp()
     }
 }
+
