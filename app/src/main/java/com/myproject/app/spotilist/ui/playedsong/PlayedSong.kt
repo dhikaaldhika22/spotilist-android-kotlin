@@ -7,6 +7,7 @@ import android.os.Handler
 import android.widget.SeekBar
 import com.myproject.app.spotilist.R
 import com.myproject.app.spotilist.databinding.ActivityPlayedSongBinding
+import com.myproject.app.spotilist.utils.Utils.Companion.setImageGlide
 
 class PlayedSong : AppCompatActivity() {
 
@@ -22,27 +23,33 @@ class PlayedSong : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val mediaplayer: MediaPlayer = MediaPlayer.create(this, R.raw.music)
+        initAction()
+        getClickedData()
+        setToolbar("Played Song")
+    }
+
+    private fun initAction() {
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.music)
 
         val seekbar = binding?.sbSong
 
-        seekbar?.progress=0
+        seekbar?.progress = 0
 
-        seekbar?.max = mediaplayer.duration
+        seekbar?.max = mediaPlayer.duration
 
 
         binding?.ivPlay?.setOnClickListener {
-            if(!mediaplayer.isPlaying){
-                mediaplayer.start()
-            }else{
-                mediaplayer.pause()
+            if (!mediaPlayer.isPlaying) {
+                mediaPlayer.start()
+            } else {
+                mediaPlayer.pause()
             }
         }
 
-        seekbar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        seekbar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser){
-                    mediaplayer.seekTo(progress)
+                if (fromUser) {
+                    mediaPlayer.seekTo(progress)
                 }
             }
 
@@ -56,13 +63,41 @@ class PlayedSong : AppCompatActivity() {
         })
 
         runnable = Runnable {
-            seekbar?.progress = mediaplayer.currentPosition
+            seekbar?.progress = mediaPlayer.currentPosition
             handler.postDelayed(runnable, 1000)
         }
         handler.postDelayed(runnable, 1000)
 
-        mediaplayer.setOnCompletionListener {
+        mediaPlayer.setOnCompletionListener {
             seekbar?.progress = 0
+        }
+    }
+
+    private fun getClickedData() {
+        val songIntent = intent
+        val songImg = songIntent.getStringExtra("img")
+        val songTitle = songIntent.getStringExtra("title")
+        val songSinger = songIntent.getStringExtra("singer")
+
+        binding?.apply {
+            ivAlbumCover.setImageGlide(applicationContext, songImg!!)
+            tvSongTitle.text = songTitle
+            tvSingers.text = songSinger
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+
+        return super.onSupportNavigateUp()
+    }
+
+    private fun setToolbar(title: String) {
+        setSupportActionBar(binding?.toolbar)
+        supportActionBar?.apply {
+            setDisplayShowHomeEnabled(true)
+            setDisplayHomeAsUpEnabled(true)
+            this.title = title
         }
     }
 }

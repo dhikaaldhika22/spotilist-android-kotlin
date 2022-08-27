@@ -20,4 +20,5 @@
     <color name="login_facebook_color">#3C5A9A</color>
     <color name="start_color">#2649C5</color>
     <color name="end_color">#C526A2</color>
+    <color name="red">#ff0000</color>
 </resources>

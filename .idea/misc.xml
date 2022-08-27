@@ -9,6 +9,7 @@
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/bg_button_google_facebook.xml" value="0.1925" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/bg_image.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/bg_search_view.xml" value="0.1" />
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.117" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_baseline_favorite_border.xml" value="0.1" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.117" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.1" />
@@ -20,7 +21,7 @@
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_played_song.xml" value="0.16203703703703703" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_register.xml" value="0.2" />
-        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_song_detail.xml" value="0.264" />
+        <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_song_detail.xml" value="0.2" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/article_list.xml" value="0.2" />
         <entry key="..\:/BANGKIT/spotilist-android-kotlin/app/src/main/res/layout/fragment_favorite.xml" value="0.2" />

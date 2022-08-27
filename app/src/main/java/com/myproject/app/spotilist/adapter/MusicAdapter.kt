@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.myproject.app.spotilist.data.model.MusicModel
 import com.myproject.app.spotilist.databinding.MusicListBinding
+import com.myproject.app.spotilist.ui.playedsong.PlayedSong
 import com.myproject.app.spotilist.ui.songdetail.SongDetail
 
 class MusicAdapter(var c: Context, private val listMusic: List<MusicModel>) : RecyclerView.Adapter<MusicAdapter.ListViewHolder>() {
@@ -36,6 +37,7 @@ class MusicAdapter(var c: Context, private val listMusic: List<MusicModel>) : Re
         }
 
         holder.itemView.setOnClickListener {
+            val id = detailMusic.id
             val img = detailMusic.imageUrl
             val title = detailMusic.title
             val singer = detailMusic.singers
@@ -45,12 +47,19 @@ class MusicAdapter(var c: Context, private val listMusic: List<MusicModel>) : Re
                 lyrics = newLyric
             }
             val intent = Intent(c, SongDetail::class.java)
-
+            intent.putExtra("id", id)
             intent.putExtra("img", img)
             intent.putExtra("title", title)
             intent.putExtra("singer", singer)
             intent.putExtra("lyrics", lyrics)
             c.startActivity(intent)
+
+            /*val intent2 = Intent(c, PlayedSong::class.java)
+            intent2.putExtra("img", img)
+            intent2.putExtra("title", title)
+            intent2.putExtra("singer", singer)
+            intent2.putExtra("lyrics", lyrics)
+            c.startActivity(intent2)*/
         }
     }
 
