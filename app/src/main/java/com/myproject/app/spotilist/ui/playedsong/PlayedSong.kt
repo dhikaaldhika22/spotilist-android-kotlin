@@ -41,8 +41,11 @@ class PlayedSong : AppCompatActivity() {
         binding?.ivPlay?.setOnClickListener {
             if (!mediaPlayer.isPlaying) {
                 mediaPlayer.start()
+                binding?.ivPlay?.setImageResource(R.drawable.ic_pause_foreground)
             } else {
                 mediaPlayer.pause()
+                binding?.ivPlay?.setImageResource(R.drawable.ic_play_foreground)
+
             }
         }
 
